@@ -1,5 +1,5 @@
 import React, { useState, useContext } from 'react'
-import { UserContext } from '../context/UserContext'
+import UserContext from '../context/UserContext'
 
 function Login() {
     const [userName, setUserName] = useState("");
@@ -7,6 +7,7 @@ function Login() {
 
     // ** how to fetch values from UserContext **
     const { setUser } = useContext(UserContext)
+    // ** Now the data is set in user of UserContext, and can be extracted **
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -17,16 +18,18 @@ function Login() {
     return (
         <div>
             <h2>Login</h2>
-            <input
+            <input type="text" placeholder='Username'
                 value={userName}
                 onChange={(e) => setUserName(e.target.value)}
-                type="text" placeholder='Username' />
-            <input
+            /><br />
+
+            <input type="password" placeholder='Password'
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                type="password" placeholder='Password' />
+            /><br />
+
             <button onClick={handleSubmit}>Submit</button>
-        </div>
+        </div >
     )
 }
 
