@@ -1,10 +1,17 @@
+// ** how to get store access
+
 import './App.css'
+import UserContextProvider from './context/UserContextProvider'
 
 function App() {
 
   return (
     <>
-      <h1>header</h1>
+    {/* -- Step1 */}
+      <UserContextProvider>
+        {/* now all children components have access */}
+
+      </UserContextProvider>
     </>
   )
 }
